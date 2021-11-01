@@ -1,15 +1,18 @@
 import './index.css'
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
+import 'antd/dist/antd.css'
 
-import React from 'react'
+import { lazy, StrictMode, Suspense } from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './App'
+const App = lazy(() => import('./App'))
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Suspense fallback={<div>loading...</div>}>
+    <StrictMode>
+      <App />
+    </StrictMode>
+  </Suspense>,
   document.getElementById('root')
 )

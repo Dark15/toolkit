@@ -1,7 +1,6 @@
 import './index.css'
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
-import 'antd/dist/antd.css'
 
 import { lazy, StrictMode, Suspense } from 'react'
 import ReactDOM from 'react-dom'

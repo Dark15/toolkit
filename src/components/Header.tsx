@@ -1,3 +1,4 @@
+import styled from '@emotion/styled'
 import MenuIcon from '@mui/icons-material/Menu'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -5,12 +6,27 @@ import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
-export default function Header() {
+const FixBox = styled(Box)`
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+`
+
+const Header = (props: any) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <FixBox sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            onClick={() => {
+              props.setOpen(!props.open)
+            }}
+          >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -18,6 +34,8 @@ export default function Header() {
           </Typography>
         </Toolbar>
       </AppBar>
-    </Box>
+    </FixBox>
   )
 }
+
+export default Header

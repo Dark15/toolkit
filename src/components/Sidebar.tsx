@@ -1,64 +1,58 @@
-import DraftsIcon from '@mui/icons-material/Drafts'
+import styled from '@emotion/styled'
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import SendIcon from '@mui/icons-material/Send'
-import StarBorder from '@mui/icons-material/StarBorder'
 import Collapse from '@mui/material/Collapse'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import ListSubheader from '@mui/material/ListSubheader'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-export default function Sidebar() {
-  const [open, setOpen] = useState(true)
+import menuList from '@/menu'
 
-  const handleClick = () => {
-    setOpen(!open)
-  }
+const FixList = styled(List)`
+  position: fixed;
+  top: 64px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+  height: calc(100vh - 64px);
+  width: 250px;
+  overflow: auto;
+  transition: left 0.5s;
+  left: 0;
+`
 
+const Sidebar = ({ open }: any) => {
   return (
-    <List
+    <FixList
       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-      component="nav"
       aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
-        </ListSubheader>
-      }
+      style={{ left: open ? 0 : -250 }}
     >
-      <ListItemButton>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sent mail" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
-      </ListItemButton>
-      <ListItemButton onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Inbox" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
-        </List>
-      </Collapse>
-    </List>
+      {menuList.map((item) => {
+        const [open, setOpen] = useState(true)
+
+        return (
+          <React.Fragment key={item.label}>
+            <ListItemButton onClick={() => setOpen(!open)}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.label} />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {item.children?.map((child) => (
+                  <ListItemButton sx={{ pl: 9 }} key={child.label}>
+                    <ListItemText primary={child.label} secondary={child.description} />
+                  </ListItemButton>
+                ))}
+              </List>
+            </Collapse>
+          </React.Fragment>
+        )
+      })}
+    </FixList>
   )
 }
+
+export default Sidebar

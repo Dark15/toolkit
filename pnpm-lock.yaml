@@ -6,6 +6,7 @@ specifiers:
   '@emotion/styled': ^11.3.0
   '@mui/icons-material': ^5.0.5
   '@mui/material': ^5.0.6
+  '@types/node': ^16.11.7
   '@types/react': ^17.0.33
   '@types/react-dom': ^17.0.10
   '@typescript-eslint/eslint-plugin': ^5.2.0
@@ -37,6 +38,7 @@ devDependencies:
   '@emotion/babel-preset-css-prop': 11.2.0
   '@emotion/react': 11.5.0_74cdfb704b70bfbe5b519e0c4564d995
   '@emotion/styled': 11.3.0_a52010db4c91eadb6c09af1366ee3612
+  '@types/node': 16.11.7
   '@types/react': 17.0.33
   '@types/react-dom': 17.0.10
   '@typescript-eslint/eslint-plugin': 5.2.0_9a56ca1c5fc1d82b3da3317a5c6f9ab1
@@ -747,6 +749,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
+    dev: true
+
+  /@types/node/16.11.7:
+    resolution: {integrity: sha512-QB5D2sqfSjCmTuWcBWyJ+/44bcjO7VbjSbOE0ucoVbAsSNQc4Lt6QkgkVXkTDwkL4z/beecZNDvVX15D4P8Jbw==}
     dev: true
 
   /@types/parse-json/4.0.0:

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
+import AddIcon from '@mui/icons-material/Add'
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule'
 import Collapse from '@mui/material/Collapse'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -22,15 +24,28 @@ const FixList = styled(List)`
 `
 
 const Sidebar = ({ open }: any) => {
+  const menuFuncList: Array<React.Dispatch<React.SetStateAction<boolean>>> = []
+  const [fold, setFold] = useState(false)
   return (
     <FixList
       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
       aria-labelledby="nested-list-subheader"
       style={{ left: open ? 0 : -250 }}
     >
+      <ListItemButton
+        onClick={() => {
+          setFold(!fold)
+          menuFuncList.forEach((func) => {
+            fold ? func(false) : func(true)
+          })
+        }}
+      >
+        <ListItemIcon>{fold ? <HorizontalRuleIcon /> : <AddIcon />}</ListItemIcon>
+        <ListItemText primary={fold ? '全部收起' : '全部展开'} />
+      </ListItemButton>
       {menuList.map((item) => {
         const [open, setOpen] = useState(true)
-
+        menuFuncList.push(setOpen)
         return (
           <React.Fragment key={item.label}>
             <ListItemButton onClick={() => setOpen(!open)}>

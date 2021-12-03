@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography'
 const FixBox = styled(Box)`
   position: fixed;
   width: 100%;
+  height: 64px;
   z-index: 2;
 `
 

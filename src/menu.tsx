@@ -4,11 +4,14 @@ import CodeIcon from '@mui/icons-material/Code'
 import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 
+import ProgrammerCalculator from './app/ProgrammerCalculator'
+
 interface MenuItem {
   label: string
   description?: string
   icon?: any
   path?: string
+  view?: any
   children?: MenuItem[]
 }
 
@@ -46,6 +49,7 @@ const menuList: MenuItem[] = [
       {
         label: '程序员计算器',
         path: '/calculate/programmer',
+        view: <ProgrammerCalculator />,
         description: '程序员计算器'
       },
       {

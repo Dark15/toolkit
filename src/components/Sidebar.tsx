@@ -36,12 +36,12 @@ const Sidebar = ({ open }: any) => {
         onClick={() => {
           setFold(!fold)
           menuFuncList.forEach((func) => {
-            fold ? func(false) : func(true)
+            fold ? func(true) : func(false)
           })
         }}
       >
-        <ListItemIcon>{fold ? <HorizontalRuleIcon /> : <AddIcon />}</ListItemIcon>
-        <ListItemText primary={fold ? '全部收起' : '全部展开'} />
+        <ListItemIcon>{fold ? <AddIcon /> : <HorizontalRuleIcon />}</ListItemIcon>
+        <ListItemText primary={fold ? '全部展开' : '全部收起'} />
       </ListItemButton>
       {menuList.map((item) => {
         const [open, setOpen] = useState(true)

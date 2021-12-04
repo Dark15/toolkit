@@ -9,6 +9,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import menuList from '@/menu'
 
@@ -57,7 +58,12 @@ const Sidebar = ({ open }: any) => {
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
                 {item.children?.map((child) => (
-                  <ListItemButton sx={{ pl: 9 }} key={child.label}>
+                  <ListItemButton
+                    component={Link}
+                    to={child.path as string}
+                    sx={{ pl: 9 }}
+                    key={child.label}
+                  >
                     <ListItemText primary={child.label} secondary={child.description} />
                   </ListItemButton>
                 ))}

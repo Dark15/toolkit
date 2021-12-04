@@ -21,12 +21,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header setOpen={setSidebarOpen} open={sidebarOpen} />
-      <Sidebar open={sidebarOpen} />
+      <BrowserRouter>
+        <Header setOpen={setSidebarOpen} open={sidebarOpen} />
+        <Sidebar open={sidebarOpen} />
 
-      <AppWrapper open={sidebarOpen}>
-        <Suspense fallback={<div />}>
-          <BrowserRouter>
+        <AppWrapper open={sidebarOpen}>
+          <Suspense fallback={<div />}>
             <Routes>
               {pages.map((item) =>
                 item.view ? (
@@ -36,9 +36,9 @@ const App = () => {
                 )
               )}
             </Routes>
-          </BrowserRouter>
-        </Suspense>
-      </AppWrapper>
+          </Suspense>
+        </AppWrapper>
+      </BrowserRouter>
     </div>
   )
 }

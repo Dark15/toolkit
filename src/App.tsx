@@ -13,6 +13,11 @@ const AppWrapper = styled.div<{ open: boolean }>`
   padding-top: 64px;
   padding-left: ${(props) => (props.open ? '250px' : '0')};
   transition: padding-left 0.5s;
+  display: flex;
+  justify-content: center;
+`
+const AppContainer = styled.div`
+  margin-top: 64px;
 `
 
 const App = () => {
@@ -26,17 +31,19 @@ const App = () => {
         <Sidebar open={sidebarOpen} />
 
         <AppWrapper open={sidebarOpen}>
-          <Suspense fallback={<div />}>
-            <Routes>
-              {pages.map((item) =>
-                item.view ? (
-                  <Route path={item.path} element={item.view} key={item.path} />
-                ) : (
-                  <Route path={item.path} element={item.view} key={item.path} />
-                )
-              )}
-            </Routes>
-          </Suspense>
+          <AppContainer>
+            <Suspense fallback={<div />}>
+              <Routes>
+                {pages.map((item) =>
+                  item.view ? (
+                    <Route path={item.path} element={item.view} key={item.path} />
+                  ) : (
+                    <Route path={item.path} element={item.view} key={item.path} />
+                  )
+                )}
+              </Routes>
+            </Suspense>
+          </AppContainer>
         </AppWrapper>
       </BrowserRouter>
     </div>

@@ -64,7 +64,11 @@ const Sidebar = ({ open }: any) => {
                     sx={{ pl: 9 }}
                     key={child.label}
                   >
-                    <ListItemText primary={child.label} secondary={child.description} />
+                    <ListItemText
+                      primary={child.label}
+                      secondary={child.description}
+                      classes={{ secondary: 'truncate' }}
+                    />
                   </ListItemButton>
                 ))}
               </List>

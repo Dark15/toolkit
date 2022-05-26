@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
+import type { MenuItem } from './menu'
 import menuList from './menu'
 import { flattenMenu } from './utils/flattenMenu'
 
@@ -16,13 +17,10 @@ const AppWrapper = styled.div<{ open: boolean }>`
   display: flex;
   justify-content: center;
 `
-const AppContainer = styled.div`
-  margin-top: 64px;
-`
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true)
-  const pages = flattenMenu(menuList)
+  const pages: MenuItem[] = flattenMenu(menuList)
 
   return (
     <div className="App">
@@ -31,19 +29,30 @@ const App = () => {
         <Sidebar open={sidebarOpen} />
 
         <AppWrapper open={sidebarOpen}>
-          <AppContainer>
+          <div
+            id="app-container"
+            className="mt-[64px] max-w-[1280px] lg:w-[86%] md:w-[88%] sm:w-[90%]"
+          >
             <Suspense fallback={<div />}>
               <Routes>
-                {pages.map((item) =>
-                  item.view ? (
-                    <Route path={item.path} element={item.view} key={item.path} />
-                  ) : (
-                    <Route path={item.path} element={item.view} key={item.path} />
-                  )
-                )}
+                {pages.map((item) => (
+                  <Route
+                    path={item.path}
+                    key={item.path}
+                    element={
+                      <>
+                        <h1 className="text-35px mb-[16px] leading-[1.35]">
+                          {item.label}
+                          <span className="ml-3 font-light text-24px">{item.description}</span>
+                        </h1>
+                        <div className="w-[75%]">{item.view}</div>
+                      </>
+                    }
+                  ></Route>
+                ))}
               </Routes>
             </Suspense>
-          </AppContainer>
+          </div>
         </AppWrapper>
       </BrowserRouter>
     </div>

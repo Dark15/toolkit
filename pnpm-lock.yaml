@@ -7,6 +7,7 @@ specifiers:
   '@emotion/styled': ^11.8.1
   '@mui/icons-material': ^5.8.0
   '@mui/material': ^5.8.1
+  '@types/he': ^1.1.2
   '@types/node': ^17.0.36
   '@types/react': ^18.0.9
   '@types/react-dom': ^18.0.5
@@ -20,6 +21,8 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-react: ^7.30.0
   eslint-plugin-simple-import-sort: ^7.0.0
+  he: ^1.2.0
+  js-base64: ^3.7.2
   pre-commit: ^1.2.2
   prettier: ^2.6.2
   react: ^18.1.0
@@ -33,6 +36,8 @@ specifiers:
 dependencies:
   '@mui/icons-material': registry.npmmirror.com/@mui/icons-material/5.8.0_q6a55ti44bqbcdsn5noqhohg5u
   '@mui/material': registry.npmmirror.com/@mui/material/5.8.1_4xriuibr7qayay6mzcpq5f43me
+  he: registry.npmmirror.com/he/1.2.0
+  js-base64: registry.npmmirror.com/js-base64/3.7.2
   react: registry.npmmirror.com/react/18.1.0
   react-dom: registry.npmmirror.com/react-dom/18.1.0_react@18.1.0
   react-router-dom: registry.npmmirror.com/react-router-dom/6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -42,6 +47,7 @@ devDependencies:
   '@emotion/babel-preset-css-prop': registry.npmmirror.com/@emotion/babel-preset-css-prop/11.2.0_@babel+core@7.18.2
   '@emotion/react': registry.npmmirror.com/@emotion/react/11.9.0_wyic7k6y4scqvmgrpshixuqwly
   '@emotion/styled': registry.npmmirror.com/@emotion/styled/11.8.1_v7eedgdx7xjx7aqq5pyjhqmfyu
+  '@types/he': registry.npmmirror.com/@types/he/1.1.2
   '@types/node': registry.npmmirror.com/@types/node/17.0.36
   '@types/react': registry.npmmirror.com/@types/react/18.0.9
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/18.0.5
@@ -865,6 +871,12 @@ packages:
     dependencies:
       estree-walker: registry.npmmirror.com/estree-walker/2.0.2
       picomatch: registry.npmmirror.com/picomatch/2.3.1
+    dev: true
+
+  registry.npmmirror.com/@types/he/1.1.2:
+    resolution: {integrity: sha512-kSJPcLO1x+oolc0R89pUl2kozldQ/fVQ1C1p5mp8fPoLdF/ZcBvckaTC2M8xXh3GYendXvCpy5m/a2eSbfgNgw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/he/-/he-1.1.2.tgz}
+    name: '@types/he'
+    version: 1.1.2
     dev: true
 
   registry.npmmirror.com/@types/json-schema/7.0.11:
@@ -2485,6 +2497,13 @@ packages:
     dependencies:
       function-bind: registry.npmmirror.com/function-bind/1.1.1
 
+  registry.npmmirror.com/he/1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/he/-/he-1.2.0.tgz}
+    name: he
+    version: 1.2.0
+    hasBin: true
+    dev: false
+
   registry.npmmirror.com/history/5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/history/-/history-5.3.0.tgz}
     name: history
@@ -2696,6 +2715,12 @@ packages:
     version: 1.13.0
     hasBin: true
     dev: true
+
+  registry.npmmirror.com/js-base64/3.7.2:
+    resolution: {integrity: sha512-NnRs6dsyqUXejqk/yv2aiXlAvOs56sLkX6nUdeaNezI5LFFLlsZjOThmwnrcwh5ZZRwZlCMnVAY3CvhIhoVEKQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/js-base64/-/js-base64-3.7.2.tgz}
+    name: js-base64
+    version: 3.7.2
+    dev: false
 
   registry.npmmirror.com/js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/js-tokens/-/js-tokens-4.0.0.tgz}

@@ -4,9 +4,10 @@ import CodeIcon from '@mui/icons-material/Code'
 import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 
+import Encoder from './app/Encoder'
 import ProgrammerCalculator from './app/ProgrammerCalculator'
 
-interface MenuItem {
+export interface MenuItem {
   label: string
   description?: string
   icon?: any
@@ -100,59 +101,15 @@ const menuList: MenuItem[] = [
     icon: <HttpsIcon />,
     children: [
       {
-        label: 'base64',
-        path: '/code/base64',
-        description: 'base64编码'
+        label: '各种编码',
+        path: '/code/encoder',
+        view: <Encoder />,
+        description: 'Base64 / URL / Unicode 互转'
       },
       {
-        label: 'base58',
-        path: '/code/base58',
-        description: 'base58解码'
-      },
-      {
-        label: 'URL',
-        path: '/code/url',
-        description: 'URL编码'
-      },
-      {
-        label: 'Unicode',
-        path: '/code/unicode',
-        description: 'Unicode编码'
-      },
-      {
-        label: 'MD5',
-        path: '/code/md5',
-        description: 'MD5加密'
-      },
-      {
-        label: 'SHA1',
-        path: '/code/sha1',
-        description: 'SHA1加密'
-      },
-      {
-        label: 'SHA256',
-        path: '/code/sha256',
-        description: 'SHA256加密'
-      },
-      {
-        label: 'SHA512',
-        path: '/code/sha512',
-        description: 'SHA512加密'
-      },
-      {
-        label: 'RSA',
-        path: '/code/rsa',
-        description: 'RSA加密'
-      },
-      {
-        label: 'AES',
-        path: '/code/aes',
-        description: 'AES加密'
-      },
-      {
-        label: 'RC4',
-        path: '/code/rc4',
-        description: 'RC4加密'
+        label: '各种加密',
+        path: '/code/encrypt',
+        description: 'AES / DES / MD5 / RC4'
       },
       {
         label: '字符串哈希',

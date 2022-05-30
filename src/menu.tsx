@@ -7,6 +7,7 @@ import ImageIcon from '@mui/icons-material/Image'
 import Encoder from './app/Encoder'
 import Encrypt from './app/Encrypt'
 import ProgrammerCalculator from './app/ProgrammerCalculator'
+import StringHash from './app/StringHash'
 
 export interface MenuItem {
   label: string
@@ -115,8 +116,9 @@ const menuList: MenuItem[] = [
       },
       {
         label: '字符串哈希',
-        path: '/code/hash',
-        description: '字符串哈希'
+        path: '/code/str-hash',
+        view: <StringHash />,
+        description: 'MD5 / SHA1 / SHA256 / SHA512'
       },
       {
         label: '文件哈希',

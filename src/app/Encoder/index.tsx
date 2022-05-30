@@ -64,7 +64,7 @@ function Encoder() {
         multiline
         minRows={10}
         maxRows={16}
-        variant="standard"
+        variant="outlined"
         value={input}
         onChange={(event) => setInput(event.target.value)}
         fullWidth
@@ -94,9 +94,9 @@ function Encoder() {
       <TextField
         label="结果"
         multiline
-        minRows={10}
+        minRows={1}
         maxRows={16}
-        variant="outlined"
+        variant="standard"
         fullWidth
         value={result}
       />

@@ -5,6 +5,7 @@ import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 
 import Encoder from './app/Encoder'
+import Encrypt from './app/Encrypt'
 import ProgrammerCalculator from './app/ProgrammerCalculator'
 
 export interface MenuItem {
@@ -109,7 +110,8 @@ const menuList: MenuItem[] = [
       {
         label: '各种加密',
         path: '/code/encrypt',
-        description: 'AES / DES / MD5 / RC4'
+        view: <Encrypt />,
+        description: 'AES / DES / RC4'
       },
       {
         label: '字符串哈希',

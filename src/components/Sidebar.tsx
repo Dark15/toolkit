@@ -16,11 +16,12 @@ import menuList from '@/menu'
 const FixList = styled(List)`
   position: fixed;
   top: 64px;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 8px -1px #6c87a1;
   height: calc(100vh - 64px);
   width: 250px;
   overflow: auto;
   transition: left 0.5s;
+  background-color: #e4f2ff;
   left: 0;
 `
 

@@ -120,7 +120,7 @@ function FileHash() {
 
       <Container {...dropzone.getRootProps(dropzone)}>
         <input {...dropzone.getInputProps()} />
-        <p>{file ? file.name : 'drop some files here, or click to select files'}</p>
+        <p>{file ? file.name : '点击或拖拽上传需要哈希的文件...'}</p>
       </Container>
       <Stack direction="row" spacing={2} alignItems="center" my={2}>
         <LoadingButton

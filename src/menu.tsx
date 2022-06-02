@@ -6,6 +6,7 @@ import ImageIcon from '@mui/icons-material/Image'
 
 import Encoder from './app/Encoder'
 import Encrypt from './app/Encrypt'
+import FileHash from './app/FileHash'
 import ProgrammerCalculator from './app/ProgrammerCalculator'
 import StringHash from './app/StringHash'
 
@@ -123,7 +124,8 @@ const menuList: MenuItem[] = [
       {
         label: '文件哈希',
         path: '/code/file-hash',
-        description: '文件哈希'
+        view: <FileHash />,
+        description: 'MD5 / SHA1 / SHA256 / SHA512'
       }
     ]
   },

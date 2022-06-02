@@ -4,6 +4,7 @@ import CodeIcon from '@mui/icons-material/Code'
 import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 
+import CodeFormat from './app/CodeFormat'
 import Encoder from './app/Encoder'
 import Encrypt from './app/Encrypt'
 import FileHash from './app/FileHash'
@@ -83,7 +84,8 @@ const menuList: MenuItem[] = [
       {
         label: '代码格式化',
         path: '/code/format',
-        description: '代码格式化'
+        view: <CodeFormat />,
+        description: '支持多种语言'
       },
       {
         label: '代码压缩',

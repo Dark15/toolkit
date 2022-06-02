@@ -43,6 +43,9 @@ const Container = styled.div<DropzoneState>`
   outline: none;
   transition: border 0.24s ease-in-out;
   cursor: pointer;
+  :hover {
+    border-color: #97c7ee;
+  }
 `
 
 function FileHash() {

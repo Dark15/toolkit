@@ -16,7 +16,7 @@ const FixBox = styled(Box)`
 const Header = (props: any) => {
   return (
     <FixBox sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ boxShadow: '0px 3px 8px 0px #8ea7be' }}>
         <Toolbar>
           <IconButton
             size="large"

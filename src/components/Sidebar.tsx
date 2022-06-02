@@ -16,12 +16,12 @@ import menuList from '@/menu'
 const FixList = styled(List)`
   position: fixed;
   top: 64px;
-  box-shadow: 0px 2px 8px -1px #6c87a1;
+  box-shadow: 2px 0px 10px -1px #b4c6d8;
   height: calc(100vh - 64px);
   width: 250px;
   overflow: auto;
   transition: left 0.5s;
-  background-color: #e4f2ff;
+  background-color: #eaf3fb;
   left: 0;
 `
 
@@ -32,7 +32,7 @@ const Sidebar = ({ open }: any) => {
     <FixList
       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
       aria-labelledby="nested-list-subheader"
-      style={{ left: open ? 0 : -250 }}
+      style={{ left: open ? 0 : -260 }}
     >
       <ListItemButton
         onClick={() => {

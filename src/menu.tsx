@@ -7,7 +7,6 @@ import ImageIcon from '@mui/icons-material/Image'
 import Encoder from './app/Encoder'
 import Encrypt from './app/Encrypt'
 import FileHash from './app/FileHash'
-import ProgrammerCalculator from './app/ProgrammerCalculator'
 import StringHash from './app/StringHash'
 
 export interface MenuItem {
@@ -53,7 +52,6 @@ const menuList: MenuItem[] = [
       {
         label: '程序员计算器',
         path: '/calculate/programmer',
-        view: <ProgrammerCalculator />,
         description: '程序员计算器'
       },
       {

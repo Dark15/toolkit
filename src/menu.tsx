@@ -4,11 +4,11 @@ import CodeIcon from '@mui/icons-material/Code'
 import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 
-import CodeFormat from './app/CodeFormat'
-import Encoder from './app/Encoder'
-import Encrypt from './app/Encrypt'
-import FileHash from './app/FileHash'
-import StringHash from './app/StringHash'
+import CodeFormat from './app/code/CodeFormat'
+import Encoder from './app/crypto/Encoder'
+import Encrypt from './app/crypto/Encrypt'
+import FileHash from './app/crypto/FileHash'
+import StringHash from './app/crypto/StringHash'
 
 export interface MenuItem {
   label: string

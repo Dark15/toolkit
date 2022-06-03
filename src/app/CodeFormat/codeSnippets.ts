@@ -49,7 +49,7 @@ export const json = `// JSON
 }
 `
 
-export const yaml = `// YAML
+export const yaml = ` # YAML
 foo: bar
 `
 
@@ -65,7 +65,7 @@ export const php = `// PHP
   ?>
 `
 
-export const graphql = `// GraphQL
+export const graphql = `# GraphQL
 {
   foo
 }

@@ -2,7 +2,7 @@ export const typescript = `// JavaScript/TypeScript
 const code = 'const foo = "bar";';
 `
 
-export const html = `// HTML
+export const html = `<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +17,13 @@ export const html = `// HTML
 </html>
 `
 
-export const css = `// CSS
+export const css = `/* CSS */
 .foo {
   color: red;
 }
 `
 
-export const scss = `// SCSS
+export const scss = `/* SCSS */
 .foo {
   color: red;
   
@@ -33,7 +33,7 @@ export const scss = `// SCSS
 }
 `
 
-export const less = `// LESS
+export const less = `/* LESS */
 .foo {
   color: red;
 

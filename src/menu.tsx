@@ -4,6 +4,7 @@ import CodeIcon from '@mui/icons-material/Code'
 import HttpsIcon from '@mui/icons-material/Https'
 import ImageIcon from '@mui/icons-material/Image'
 
+import CodeCompress from './app/code/CodeCompress'
 import CodeFormat from './app/code/CodeFormat'
 import Encoder from './app/crypto/Encoder'
 import Encrypt from './app/crypto/Encrypt'
@@ -90,7 +91,8 @@ const menuList: MenuItem[] = [
       {
         label: '代码压缩',
         path: '/code/compress',
-        description: '代码压缩'
+        view: <CodeCompress />,
+        description: 'HTML / CSS / JavaScript'
       },
       {
         label: 'babel编译',
